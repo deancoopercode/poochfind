@@ -1,0 +1,26 @@
+<h1> search results </h1>
+
+
+<% @userSearchResults.each do |user| %>
+
+  <div class ="searchResultsContainer">
+    <p>Username : <%= user['username'] %></p>
+    <p>Email : <%= user['email'] %></p>
+
+    <img src="<%= user['imageurl'] %>"></img>
+    <p></p>
+
+    <p>Dog Name : <%= user['poochname'] %></p>
+    <p>Dog Breed : <%= user['poochbreed'] %></p>
+    <img src="<%= user['poochimageurl'] %>"></img>
+
+    <form action="/adduser/<%= user['id'] %>" method="post">
+
+      <button>Connect to User</button>
+    </form>
+
+
+
+  </div>
+
+<% end %>

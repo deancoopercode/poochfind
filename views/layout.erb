@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World</title>
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+</head>
+<body>
+
+  <% if logged_in? %>
+    <h2>Welcome, <%= current_user.email %>, Id <%= session[:user_id] %>
+
+  <p>
+    <a href="/searchusers">Search</a>
+    <a href="/post">Add Post</a>
+  </p>
+
+    <form action="/session" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button>logout</button>
+    </form>
+
+  <% else %>
+      <a href="/session/new">Login </a>
+      <a href="/signup/new">Sign up </a>
+  <% end %>
+<hr>
+  <%= yield %>
+
+</body>
