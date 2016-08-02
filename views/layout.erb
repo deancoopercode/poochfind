@@ -8,22 +8,49 @@
 <body>
 
   <% if logged_in? %>
-    <h2>Welcome, <%= current_user.email %>, Id <%= session[:user_id] %>
-
-  <p><a href="/searchusers">Search</a>  </p>
-  <p><a href="/post">Add Post</a></p>
-  <p><a href="/friendlist">My Friends</a></p>
+  <div id="currentlyLoggedInDiv">
+    <span id="loggedinHeader">Welcome, <%= current_user.username %> (<%= session[:user_id] %>) </span>
 
     <form action="/session" method="post">
       <input type="hidden" name="_method" value="delete">
       <button>logout</button>
     </form>
+  </div>
 
   <% else %>
-      <a href="/session/new">Login </a>
-      <a href="/signup/new">Sign up </a>
+
+<div id="currentlyLoggedOutDiv">
+  <form action="/session" method="post">
+    <label for="">email</label>
+    <input type="text" name="email">
+
+    <label for="">password</label>
+    <input type="password" name="password">
+
+    <button>login</button>
+  </form>
+  <a id="signupLink" href="/signup/new">Sign up </a>
+
+</div>
   <% end %>
+
+  <heading>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/searchusers">Search</a> </li>
+        <li><a href="/post">Add Post</a></li>
+        <li><a href="/friendlist">My Friends</a></li>
+    </nav>
+  </heading>
+
 <hr>
   <%= yield %>
 
 </body>
+
+
+<!--
+<p><a href="/searchusers">Search</a>  </p>
+<p><a href="/post">Add Post</a></p>
+<p><a href="/friendlist">My Friends</a></p> -->

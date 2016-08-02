@@ -7,6 +7,7 @@ require_relative 'db_config'
 
 require_relative 'models/user'
 require_relative 'models/friendship'
+require_relative 'models/post'
 
 #data access
 require_relative 'dataaccess/userdataaccess'
@@ -30,7 +31,9 @@ end
 
 get '/' do
   # load posts here and show them on the homepage.
+
   @userPostFeed = loadPosts()
+
   erb :index
 end
 
@@ -64,34 +67,25 @@ end
 
 post '/searchusers' do
   @userSearchResults = searchForUsers(params[:searchuserkeywords])
-
   erb :searchusersresult
 end
-
-
 
 get '/post' do
   erb :post
 end
-
 
 post '/post' do
   createPost()
   redirect to '/'
 end
 
-
-
-
 post '/signup' do
   createUser()
   redirect to '/'
 end
 
-
 post '/adduser/:user_id' do
   # connect to this user.
-  binding.pry
   newFriendship = Friendship.new
 
   newFriendship.user_id = current_user.id
@@ -100,10 +94,7 @@ post '/adduser/:user_id' do
   redirect to '/'
 end
 
-
-
 get '/friendlist' do
-  binding.pry
   @friendList = current_user.friends
   erb :friendlist
 end

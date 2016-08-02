@@ -13,9 +13,6 @@ CREATE TABLE users (
 ALTER TABLE users add column username VARCHAR(100);
 ALTER TABLE users add column imageurl VARCHAR(500);
 
-
-
-
 CREATE TABLE friendships (
   id SERIAL4 PRIMARY KEY,
   user_id INTEGER,
@@ -30,3 +27,5 @@ CREATE TABLE posts (
   secondaryimageurl VARCHAR(500),
   user_id INTEGER
 );
+
+ALTER TABLE posts add column datetimeofpost timestamp;

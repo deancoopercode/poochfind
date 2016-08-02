@@ -1,10 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+
 img {
+  /*width: 100px;*/
+}
+body {
+  background-color: lightgray;
+}
+
+
+#userImg {
+  width: 75px;
+}
+
+#poochImg {
+  width: 75px;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+form {
+  display: inline-block;
+}
+#currentlyLoggedInDiv, #currentlyLoggedOutDiv {
+  height: 50px;
+}
+
+#currentlyLoggedOutDiv input{
+  margin: 15px;
+}
+
+#currentlyLoggedOutDiv a{
+  margin: 15px;
+}
+
+
+.primaryImagePost {
+  float: left;
+  margin: 0px 15px 15px 0px;
   width: 100px;
 }
 
 
-.searchResultsContainer {
+.span-2 {
+  width: 45%;
+  float: left;
+}
 
-margin-bottom: 50px;
-border-bottom: 1px solid black;
+.span-3 {
+  width: 80.666666%;
+  float: left;
+
+}
+
+.searchResultsContainer {
+  margin: 10px;
+  background-color: white;
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+  width: 80%;
+}
+
+#signupLink {
+  display: inline-block;
+}
+
+heading nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+heading nav li {
+  padding-right: 1em 0em 1em 0em;
+  border: 1px solid black;
+  list-style: none;
+  text-align: center;
+  background-color: green;
+  padding: 1em  0.5em 1em  0.5em;
+}
+nav li:nth-child(even) {
+  background-color: lightgreen;
+}
+
+heading nav li {
+  width: 20%;
+  display: inline-block;
+}
+heading nav{
+  width: 95%;
+  margin: 0 auto;
 }
