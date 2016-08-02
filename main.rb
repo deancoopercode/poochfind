@@ -10,7 +10,8 @@ require_relative 'models/friendship'
 
 #data access
 require_relative 'dataaccess/userdataaccess'
-
+require_relative 'dataaccess/postdataaccess'
+require_relative 'dataaccess/friendshipdataaccess'
 
 enable :sessions
 
@@ -28,6 +29,8 @@ helpers do
 end
 
 get '/' do
+  # load posts here and show them on the homepage.
+  @userPostFeed = loadPosts()
   erb :index
 end
 
@@ -66,6 +69,20 @@ post '/searchusers' do
 end
 
 
+
+get '/post' do
+  erb :post
+end
+
+
+post '/post' do
+  createPost()
+  redirect to '/'
+end
+
+
+
+
 post '/signup' do
   createUser()
   redirect to '/'
@@ -75,10 +92,18 @@ end
 post '/adduser/:user_id' do
   # connect to this user.
   binding.pry
-  newComment = Comment.new
-  binding.pry
-  newComment.dish_id = params[:dish_id]
-  newComment.commenttext =  params[:newCommentText]
-  newComment.save
+  newFriendship = Friendship.new
+
+  newFriendship.user_id = current_user.id
+  newFriendship.friend_id =  params[:user_id]
+  newFriendship.save
   redirect to '/'
+end
+
+
+
+get '/friendlist' do
+  binding.pry
+  @friendList = current_user.friends
+  erb :friendlist
 end

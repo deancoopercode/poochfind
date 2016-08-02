@@ -1,0 +1,9 @@
+
+<h2>My Friend List </h2>
+
+<% @friendList.each do |friend| %>
+
+  <h2><%= friend['username'] %></h2>
+  <img src="<%= friend['poochimageurl'] %>"></img>
+
+<% end %>
