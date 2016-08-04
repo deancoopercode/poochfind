@@ -29,7 +29,7 @@
 
 
           <%if post['primaryimageurl'].include? "youtube" %>
-            <object class="primaryVideoPost" data="<%= cleanYoutubeString(post['primaryimageurl'])%>" width="560" height="315"></object>
+            <object class="primaryVideoPost" data="<%= cleanYoutubeString(post['primaryimageurl'])%>" width="280" height="158"></object>
           <% else %>
             <img class="primaryImagePost" src="<%= post['primaryimageurl'] %>"></img>
           <% end %>
