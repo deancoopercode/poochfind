@@ -20,11 +20,11 @@ enable :sessions
 
 helpers do
   def cleanYoutubeString(string)
-    if !string.include? 'embed'
-      return string.sub('http://www.youtube.com/', "http://www.youtube.com/embed/")
-    end
     if string.include? 'watch'
-      return string.sub('http://www.youtube.com/watch?v=', "http://www.youtube.com/embed/")
+      return string.sub('www.youtube.com/watch?v=', "www.youtube.com/embed/")
+    end
+    if !string.include? 'embed'
+      return string.sub('www.youtube.com/', "www.youtube.com/embed/")
     end
     return string
   end
@@ -42,11 +42,9 @@ helpers do
 end
 
 get '/' do
-  # load posts here and show them on the homepage.
-if logged_in?
-  @userPostFeed = loadPosts()
-  # binding.pry
-end
+  if logged_in?
+    @userPostFeed = loadPosts()
+  end
   erb :index
 end
 
@@ -56,13 +54,10 @@ end
 
 post '/session' do
   user = User.find_by(email: params[:email])
-
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
-    redirect to '/'
-  else
-    erb :login
   end
+  redirect to '/'
 end
 
 delete '/session' do
@@ -78,8 +73,6 @@ get '/searchusers' do
   if !logged_in?
     redirect to '/'
   end
-
-
   erb :searchusers
 end
 
@@ -92,8 +85,6 @@ get '/post' do
   if !logged_in?
     redirect to '/'
   end
-
-
   erb :post
 end
 
@@ -115,10 +106,7 @@ get '/post/:id/edit' do
 end
 
 put '/post/:id' do
- post = Post.find(params[:id])
- post.content = params[:content]
- post.primaryimageurl= params[:primaryimageurl]
- post.save
+  updatePost(params[:id], params[:content], params[:primaryimageurl])
  redirect '/'
 end
 
@@ -142,12 +130,12 @@ get '/friendlist' do
 end
 
 post '/comment/:post_id' do
-  # newComment = Comment.new
-  # newComment.post_id = params[:post_id]
-  # newComment.user_id = session[:user_id]
-  # newComment.content =  params[:newCommentText]
-  # newComment.save
-
   createComment(params[:post_id], params[:newCommentText])
+  redirect to '/'
+end
+
+delete '/comment/:comment_id' do
+  commentToDelete = Comment.find(params[:comment_id])
+  commentToDelete.destroy
   redirect to '/'
 end

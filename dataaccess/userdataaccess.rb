@@ -15,11 +15,6 @@ end
 
 
 def searchForUsers(searchTerm)
-
-  #users = User.where("poochbreed LIKE '%?%' OR username LIKE '%?%'", searchTerm, searchTerm).or
-
-  #users = User.where("poochbreed LIKE %?% OR username LIKE %?%", 'Poodle', 'Poodle')
-
   users = User.where("poochbreed like :kw or username like :kw", :kw=>"%#{searchTerm}%")
   users = users.where.not(id: session[:user_id])
   return users

@@ -13,15 +13,8 @@
   border: solid 1px #cfd6dc;
   border-top-color: #fcfcfc;
   border-bottom-color: #b2bdc7;
-  margin: 0.5em;
   padding: 0,2em;
-
 }
-
-.postContainer {
-  /*border: 1px solid blue;*/
-}
-
 
 .userName, .poochName {
   vertical-align: top;
@@ -33,7 +26,6 @@
 }
 
 .signupInput {
-
   width: 150px;
   float: left;
 }
@@ -42,20 +34,18 @@
   clear: left;
 }
 
-
-
  button {
    width: 80px;
    height: 25px;
    margin: 5px;
-   background-color: brown;
+   background-color: #18737f;
    color: white;
    font-size:  0.75em;
    border-radius: 15px;
  }
 
 body {
-  /*background-color: lightgray;*/
+  background-color: #f4f2f2;
 }
 
 #userImg {
@@ -76,7 +66,6 @@ body {
   margin: 5px;
 }
 
-
 #poochImg {
   height: 80px;
   border: 1px solid black;
@@ -95,12 +84,17 @@ form {
   vertical-align: top;
 }
 
+header {
+  background-color: white;
+}
+
 
 #currentlyLoggedInDiv, #currentlyLoggedOutDiv {
   height: 50px;
-  width: 60%;
+  width: 50%;
   display: inline-block;
   vertical-align: top;
+  margin: 10px;
 }
 
 #headerDiv {
@@ -123,26 +117,21 @@ form {
   padding: 0;
 }
 
-#currentlyLoggedOutDiv input{
-  /*margin: 15px;*/
-}
-
-#currentlyLoggedOutDiv a{
-  /*margin: 15px;*/
+#loggedinHeader {
+  margin: 10px;
 }
 
 .primaryImagePost {
   float: left;
-  margin: 0px 5px 5px 5px;
+  margin: 0px 15px 5px 5px;
   width: 225px;
+  border: 1px solid black;
 }
 
 .primaryVideoPost{
   float: left;
   margin: 0px 5px 5px 5px;
-
 }
-
 
 .spanSmall {
   width: 40%;
@@ -155,43 +144,56 @@ form {
   width: 50%;
   float: left;
   height: 100px;
-  border-bottom: 1px solid grey;
+  border: 1px solid grey;
+  background-color: #e8d5b8;
 }
 
 .span-3 {
-  width: 98%;
+  width: 100%;
   float: left;
-
+  border-bottom: 1px solid grey;
+  padding: 5px;
+}
+.commentsSection {
+  background-color: white;
 }
 
 .commentsContainer {
-  margin: 10px;
+  /*margin: 10px;*/
   margin-left: 50px;
   background-color: #f4f4f4;
-  border: 1px solid #ef8c38;
-
-  margin: 30px auto;
-  width: 68%;
+  border: 1px solid gray;
+  margin: 0px auto;
+  width: 95%;
 }
 
+#newCommentsForm {
+  width: 100%;
+}
 
 .newCommentContainer {
-  margin: 10px;
-  background-color: #f4f4f4;
-  border: 1px solid red;
-
-  margin: 30px auto;
+  margin: 0 auto;
   width: 80%;
+  border-radius: 10px;
 }
 
+#newCommentText{
+  width: 80%;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.postContainer {
+    background-color: white;
+    margin: 20px auto;
+    margin-bottom: 50px;
+    width: 80%;
+}
 
 .searchResultsContainer {
-  margin: 10px;
-  background-color: #f4f4f4;
-  border: 1px solid #ef8c38;
-
-  margin: 30px auto;
-  width: 80%;
+  background-color: white;
+  margin: 10px auto;
+  width: 90%;
 }
 
 .searchForUsersContainer {
@@ -202,7 +204,6 @@ form {
   margin: 10px auto;
   width: 80%;
 }
-
 
 .searchForUsersContainer img {
   width: 100px;
@@ -229,15 +230,13 @@ heading nav li {
   height: 30px;
   vertical-align: top;
   border-radius: 10px;
+  width: 23%;
+  display: inline-block;
 }
 nav li:nth-child(even) {
   background-color: #ef8c38;
 }
 
-heading nav li {
-  width: 23%;
-  display: inline-block;
-}
 heading nav{
   width: 95%;
   margin: 0 auto;

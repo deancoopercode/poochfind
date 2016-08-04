@@ -24,6 +24,7 @@ CREATE TABLE posts (
   id SERIAL4 PRIMARY KEY,
   content VARCHAR(5000),
   primaryimageurl VARCHAR(3000),
+  created_at timestamp,
   user_id INTEGER
 );
 
@@ -31,11 +32,7 @@ CREATE TABLE posts (
 CREATE TABLE comments (
   id SERIAL4 PRIMARY KEY,
   content VARCHAR(5000),
+  created_at timestamp,
   post_id INTEGER,
   user_id INTEGER
 );
-
-
-ALTER TABLE comments add column created_at TYPE timestamp;
-
-ALTER TABLE posts add column datetimeofpost timestamp;

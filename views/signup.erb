@@ -1,10 +1,10 @@
-<form action="/signup" method="post">
+<form action="/signup" onsubmit="return validateSubmitForm()" method="post">
 
   <h2>Your Details </h2>
   <table>
     <tr>
       <td><label class="signupLabel" for="">Username</label></td>
-      <td>  <input class="signupInput" type="text" name="username"></td>
+      <td><input class="signupInput" type="text" id="username" name="username"></td>
     </tr>
     <tr>
       <td><label class="signupLabel" for="">Image URL</label></td>
@@ -14,31 +14,25 @@
       <td><label class="signupLabel" for="">Email</label></td>
       <td><input class="signupInput" type="text" name="email"></td>
     </tr>
-
     <tr>
       <td><label class="signupLabel" for="">Password</label></td>
-      <td><input class="signupInput" type="text" name="password"></td>
+      <td><input class="signupInput" type="text" id="password" name="password"></td>
     </tr>
-</table>
-
-
+  </table>
 <h2>Your Pooch </h2>
-
-<table>
-  <tr>
-    <td><label class="signupLabel" for="">Name</label></td>
-    <td><input class="signupInput" type="text" name="poochname"></td>
-  </tr>
-
-  <tr>
-    <td><label class="signupLabel" for="">Breed</label></td>
-    <td><input class="signupInput" ype="text" name="poochbreed"></td>
-  </tr>
-
-  <tr>
-    <td>  <label class="signupLabel" for="">Image URL</label></td>
-    <td>  <input class="signupInput" type="text" name="poochimageurl"></td>
-  </tr>
-</table>
+  <table>
+    <tr>
+      <td><label class="signupLabel" for="">Name</label></td>
+      <td><input class="signupInput" type="text" name="poochname"></td>
+    </tr>
+    <tr>
+      <td><label class="signupLabel" for="">Breed</label></td>
+      <td><input class="signupInput" ype="text" name="poochbreed"></td>
+    </tr>
+    <tr>
+      <td><label class="signupLabel" for="">Image URL</label></td>
+      <td><input class="signupInput" type="text" name="poochimageurl"></td>
+    </tr>
+  </table>
   <button class="signupButton">Sign-Up</button>
 </form>

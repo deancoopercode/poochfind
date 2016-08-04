@@ -12,12 +12,12 @@ def createPost()
 
 end
 
-#
-# select * from posts where user_id in
-# (select friend_id from friendships where user_id)
-#
-
-#INNER JOIN
+def updatePost(postId, content, image)
+  post = Post.find(postId)
+  post.content = content
+  post.primaryimageurl = image
+  post.save
+end
 
 
 def loadPosts()

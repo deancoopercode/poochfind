@@ -7,7 +7,7 @@
   <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
+<header>
   <% if logged_in? %>
   <div id="currentlyLoggedInDiv">
     <span id="loggedinHeader">Welcome, <%= current_user.username %> </span>
@@ -58,8 +58,10 @@
   </heading>
 
 <hr>
+</header>
   <%= yield %>
 
+<script src="javascripts/application.js"></script>
 </body>
 
 
