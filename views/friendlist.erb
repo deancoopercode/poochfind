@@ -3,7 +3,21 @@
 
 <% @friendList.each do |friend| %>
 
-  <h2><%= friend['username'] %></h2>
-  <img src="<%= friend['poochimageurl'] %>"></img>
+<div class="searchResultsContainer">
+  <div class="span-2">
+    <img id="userImg" src="<%= friend['imageurl'] %>"></img>
+    
+    <span class="userName"><%= friend['username'] %></span>
 
+  </div>
+
+  <div class="span-2">
+    <img id="poochImg" src="<%= friend['poochimageurl'] %>"></img>
+    <span class="poochName">
+      <%= friend['poochname'] %> (<%= friend['poochbreed'] %>)
+    </span>
+  </div>
+
+<div style="clear: both;"></div>
+</div>
 <% end %>

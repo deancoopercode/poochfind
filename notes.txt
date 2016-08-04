@@ -1,3 +1,47 @@
+
+username / password
+===========================================================================
+animallover2
+animallover2
+
+http://www.rawstory.com/wp-content/uploads/2014/12/Rich-man-lighting-cigar-with-100-bill-Shutterstock-800x430.png
+
+
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdDdBWeNMBfUuBpza45A-LrVRuMh57T3BugAXmw-9A5iJfQgME
+
+Bulldog
+
+Bully
+
+==================================================================================
+
+cutegirl
+cutegirl
+
+https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQZA77EWr-W2S65lcmKBp85oVwNjU52jGHXjWlcQkjCnYZFBSh4
+
+Buddy
+
+http://cdn.akc.org/HomepageImages/Italian_Greyhound_Steinlage_head.jpg
+
+==================================================================================
+renee
+renee
+http://www.pet360.com/Content/Images/Cms/cms_resized_large/maltipoo-poodle-mix-178514784.lg.jpg
+
+https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSq-ON6QGeXvY1atszHKJuXHsdgi3s3DoRfgHnL9S4bxsJap9Qdkw
+
+Lucy
+Poodle
+
+http://dogbreedia.com/wp-content/uploads/2013/01/toy-poodle.jpg
+
+
+
+
+
+
+
 # ruby main.rb -p 2000
 
 
@@ -7,6 +51,7 @@ u.email = 'admin'
 u.password = 'admin'
 
 
+<!-- http://d2a1bjmdirff5e.cloudfront.net/wp-content/uploads/2016/01/25194555/Pitbulls.jpg -->
 
 
 #############################################################

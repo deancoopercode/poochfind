@@ -1,34 +1,62 @@
-<h1>Pooch Find</h1>
 
 
-<% @userPostFeed.each do |post| %>
 
-  <div class ="searchResultsContainer">
+  <% if logged_in? %>
+<h3>Latest News</h3>
 
-    <div class="span-2">
-      <img id="userImg" src="<%= post.user.imageurl %>"></img>
-      <span class="userName"><%= post.user.username %></span>
+  <% @userPostFeed.each do |post| %>
+
+
+
+    <div class="searchResultsContainer">
+      <div class="span-3 header">
+        <%= post.created_at.to_formatted_s(:long_ordinal)  %>
+      </div>
+      <div class="span-2">
+        <img id="userImg" src="<%= post.user.imageurl %>"></img>
+        <span class="userName"><%= post.user.username %></span>
+      </div>
+
+      <div class="span-2">
+        <img id="poochImg" src="<%= post.user.poochimageurl %>"></img>
+        <span class="poochName">
+          <%= post.user.poochname %> (<%= post.user.poochbreed %>)
+        </span>
+      </div>
+
+      <div class="span-3">
+        <p class='postContent'>
+
+
+          <%if post['primaryimageurl'].include? "youtube" %>
+            <object class="primaryVideoPost" data="<%= cleanYoutubeString(post['primaryimageurl'])%>" width="560" height="315"></object>
+          <% else %>
+            <img class="primaryImagePost" src="<%= post['primaryimageurl'] %>"></img>
+          <% end %>
+
+
+          <%= post['content'] %>
+
+          <% if post.user.id == current_user.id %>
+            <form action="/post/<%= post['id'] %>" method="post">
+              <input type="hidden" name="_method" value="delete">
+              <button>Delete</button>
+            </form>
+
+            <a href="/post/<%= post['id'] %>/edit">Edit</a>
+
+          <% end %>
+        </p>
+      </div>
+  <div style="clear: both;"></div>
     </div>
 
-    <div class="span-2">
-      <img id="poochImg" src="<%= post.user.poochimageurl %>"></img>
-      <span class="poochName">
-        <%= post.user.poochname %> (<%= post.user.poochbreed %>)
-      </span>
-    </div>
-
-    <div class="span-3">
-      <p class='postContent'>
-        <img class="primaryImagePost" src="<%= post['primaryimageurl'] %>"></img>
 
 
-        <%= post['content'] %>
-
-      </p>
-    </div>
-<div style="clear: both;"></div>
-  </div>
+  <% end %>
 
 
+  <% else %>
 
-<% end %>
+  <h1>Please login or sign up using the links above. </h1>
+  <% end %>

@@ -3,7 +3,7 @@
 
 <% @userSearchResults.each do |user| %>
 
-  <div class ="searchResultsContainer">
+  <div class ="searchForUsersContainer">
     <p>Username : <%= user['username'] %></p>
     <p>Email : <%= user['email'] %></p>
 
@@ -16,7 +16,7 @@
 
     <form action="/adduser/<%= user['id'] %>" method="post">
 
-      <button>Connect to User</button>
+      <button>Connect</button>
     </form>
 
 

@@ -1,0 +1,33 @@
+
+<form action="/post/<%= @post['id'] %>" method="post">
+<input type="hidden" name="_method" value="put">
+  <h1>Edit Post</h1>
+
+<table>
+  <tr>
+    <td class="tdHeaderRowCol1">
+      <label id="commentsLabel" for="">Comments</label>
+    </td>
+    <td>
+      <textarea id="textarea" name="content"><%= @post['content'] %></textarea>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label for="">Image URL</label>
+    </td>
+  <td>
+    <input class="inputBox" type="text" name="primaryimageurl" value="<%= @post['primaryimageurl'] %>">
+  </td>
+</tr>
+<tr>
+  <td></td>
+  <td>
+      <button>Update</button>
+  </td>
+
+</tr>
+
+</table>
+
+</form>

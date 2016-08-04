@@ -1,25 +1,44 @@
 <form action="/signup" method="post">
-  <label for="">username</label>
-  <input type="text" name="username">
 
-  <label for="">Image URL</label>
-  <input type="text" name="imageurl">
+  <h2>Your Details </h2>
+  <table>
+    <tr>
+      <td><label class="signupLabel" for="">Username</label></td>
+      <td>  <input class="signupInput" type="text" name="username"></td>
+    </tr>
+    <tr>
+      <td><label class="signupLabel" for="">Image URL</label></td>
+      <td><input class="signupInput" type="text" name="imageurl"></td>
+    </tr>
+    <tr>
+      <td><label class="signupLabel" for="">Email</label></td>
+      <td><input class="signupInput" type="text" name="email"></td>
+    </tr>
 
-  <label for="">email</label>
-  <input type="text" name="email">
+    <tr>
+      <td><label class="signupLabel" for="">Password</label></td>
+      <td><input class="signupInput" type="text" name="password"></td>
+    </tr>
+</table>
 
-  <label for="">password</label>
-  <input type="text" name="password">
 
 <h2>Your Pooch </h2>
-  <label for="">Name</label>
-  <input type="text" name="poochname">
 
-  <label for="">Breed</label>
-  <input type="text" name="poochbreed">
+<table>
+  <tr>
+    <td><label class="signupLabel" for="">Name</label></td>
+    <td><input class="signupInput" type="text" name="poochname"></td>
+  </tr>
 
-  <label for="">Image URL</label>
-  <input type="text" name="poochimageurl">
+  <tr>
+    <td><label class="signupLabel" for="">Breed</label></td>
+    <td><input class="signupInput" ype="text" name="poochbreed"></td>
+  </tr>
 
-  <button>sign-up</button>
+  <tr>
+    <td>  <label class="signupLabel" for="">Image URL</label></td>
+    <td>  <input class="signupInput" type="text" name="poochimageurl"></td>
+  </tr>
+</table>
+  <button class="signupButton">Sign-Up</button>
 </form>

@@ -23,8 +23,7 @@ CREATE TABLE friendships (
 CREATE TABLE posts (
   id SERIAL4 PRIMARY KEY,
   content VARCHAR(5000),
-  primaryimageurl VARCHAR(500),
-  secondaryimageurl VARCHAR(500),
+  primaryimageurl VARCHAR(3000),
   user_id INTEGER
 );
 

@@ -17,6 +17,16 @@ require_relative 'dataaccess/friendshipdataaccess'
 enable :sessions
 
 helpers do
+  def cleanYoutubeString(string)
+    if !string.include? 'embed'
+      return string.sub('http://www.youtube.com/', "http://www.youtube.com/embed/")
+    end
+    if string.include? 'watch'
+      return string.sub('http://www.youtube.com/watch?v=', "http://www.youtube.com/embed/")
+    end
+    return string
+  end
+
   def logged_in?
     if User.find_by(id: session[:user_id])
       return true
@@ -31,9 +41,9 @@ end
 
 get '/' do
   # load posts here and show them on the homepage.
-
+if logged_in?
   @userPostFeed = loadPosts()
-
+end
   erb :index
 end
 
@@ -57,11 +67,16 @@ delete '/session' do
   redirect to '/'
 end
 
-get '/signup/new' do
+get '/signup' do
   erb :signup
 end
 
 get '/searchusers' do
+  if !logged_in?
+    redirect to '/'
+  end
+
+
   erb :searchusers
 end
 
@@ -71,6 +86,11 @@ post '/searchusers' do
 end
 
 get '/post' do
+  if !logged_in?
+    redirect to '/'
+  end
+
+
   erb :post
 end
 
@@ -78,6 +98,27 @@ post '/post' do
   createPost()
   redirect to '/'
 end
+
+delete '/post/:id' do
+  postToDelete = Post.find(params[:id])
+  postToDelete.destroy
+  redirect to '/'
+end
+
+#getting a form page, not posting anything
+get '/post/:id/edit' do
+  @post = Post.find(params[:id])
+  erb :edit
+end
+
+put '/post/:id' do
+ post = Post.find(params[:id])
+ post.content = params[:content]
+ post.primaryimageurl= params[:primaryimageurl]
+ post.save
+ redirect '/'
+end
+
 
 post '/signup' do
   createUser()
@@ -95,6 +136,10 @@ post '/adduser/:user_id' do
 end
 
 get '/friendlist' do
+  if !logged_in?
+    redirect to '/'
+  end
+
   @friendList = current_user.friends
   erb :friendlist
 end

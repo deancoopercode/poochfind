@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hello World</title>
+  <title>Pooch Pals</title>
   <link rel='stylesheet' href='/stylesheets/main.css'>
+  <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -21,18 +22,30 @@
 
 <div id="currentlyLoggedOutDiv">
   <form action="/session" method="post">
-    <label for="">email</label>
-    <input type="text" name="email">
+    <table>
+      <tr>
+        <td style="width: 20%"><label for="">email</label></td>
+        <td>
+          <input type="text" name="email">
+        </td>
+      </tr>
+      <tr>
+        <td><label for="">password</label></td>
+        <td><input type="password" name="password"></td>
 
-    <label for="">password</label>
-    <input type="password" name="password">
-
-    <button>login</button>
+        <td style="width: 80%">
+          <button>Login</button>
+          <a id="signupLink" href="/signup">Sign up </a>
+        </td>
+      </tr>
+    </table>
   </form>
-  <a id="signupLink" href="/signup/new">Sign up </a>
-
 </div>
   <% end %>
+
+<div id="headerDiv">
+  <img src="images\logo4.png"></img>
+</div>
 
   <heading>
     <nav>
