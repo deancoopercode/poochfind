@@ -8,11 +8,13 @@ require_relative 'db_config'
 require_relative 'models/user'
 require_relative 'models/friendship'
 require_relative 'models/post'
+require_relative 'models/comment'
 
 #data access
 require_relative 'dataaccess/userdataaccess'
 require_relative 'dataaccess/postdataaccess'
 require_relative 'dataaccess/friendshipdataaccess'
+require_relative 'dataaccess/commentdataaccess'
 
 enable :sessions
 
@@ -43,6 +45,7 @@ get '/' do
   # load posts here and show them on the homepage.
 if logged_in?
   @userPostFeed = loadPosts()
+  # binding.pry
 end
   erb :index
 end
@@ -119,19 +122,13 @@ put '/post/:id' do
  redirect '/'
 end
 
-
 post '/signup' do
   createUser()
   redirect to '/'
 end
 
 post '/adduser/:user_id' do
-  # connect to this user.
-  newFriendship = Friendship.new
-
-  newFriendship.user_id = current_user.id
-  newFriendship.friend_id =  params[:user_id]
-  newFriendship.save
+  createFriendship(params[:user_id])
   redirect to '/'
 end
 
@@ -142,4 +139,15 @@ get '/friendlist' do
 
   @friendList = current_user.friends
   erb :friendlist
+end
+
+post '/comment/:post_id' do
+  # newComment = Comment.new
+  # newComment.post_id = params[:post_id]
+  # newComment.user_id = session[:user_id]
+  # newComment.content =  params[:newCommentText]
+  # newComment.save
+
+  createComment(params[:post_id], params[:newCommentText])
+  redirect to '/'
 end

@@ -10,7 +10,7 @@
 
   <% if logged_in? %>
   <div id="currentlyLoggedInDiv">
-    <span id="loggedinHeader">Welcome, <%= current_user.username %> (<%= session[:user_id] %>) </span>
+    <span id="loggedinHeader">Welcome, <%= current_user.username %> </span>
 
     <form action="/session" method="post">
       <input type="hidden" name="_method" value="delete">

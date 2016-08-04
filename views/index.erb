@@ -7,7 +7,6 @@
   <% @userPostFeed.each do |post| %>
 
 
-
     <div class="searchResultsContainer">
       <div class="span-3 header">
         <%= post.created_at.to_formatted_s(:long_ordinal)  %>
@@ -34,9 +33,7 @@
             <img class="primaryImagePost" src="<%= post['primaryimageurl'] %>"></img>
           <% end %>
 
-
           <%= post['content'] %>
-
           <% if post.user.id == current_user.id %>
             <form action="/post/<%= post['id'] %>" method="post">
               <input type="hidden" name="_method" value="delete">
@@ -47,11 +44,38 @@
 
           <% end %>
         </p>
-      </div>
-  <div style="clear: both;"></div>
     </div>
+      <div style="clear: both;"></div>
+    </div>
+  
+
+<!-- ********************       Comments Section     **************************-->
 
 
+          <% post.comments.each do |comment| %>
+
+            <div class="commentsContainer">
+              <div class="span-3 header">
+                <%= comment.created_at.to_formatted_s(:long_ordinal)  %>
+              </div>
+              <div class="spanSmall">
+                <img id="userImg" src="<%= comment.user.imageurl %>"></img>
+                <span class="userName"><%= comment.user.username %></span>
+              </div>
+
+              <div><%= comment.content %></div>
+              <div style="clear: both;"></div>
+            </div>
+
+          <% end %>
+
+      <div class="newCommentContainer">
+        <form action="/comment/<%= post['id'] %>" method="post">
+          <label for="">Enter a new comment :</label>
+          <input type="text" name="newCommentText" id="newCommentText">
+          <button>submit</button>
+        </form>
+      </div>
 
   <% end %>
 

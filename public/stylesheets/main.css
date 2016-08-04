@@ -17,6 +17,12 @@
   padding: 0,2em;
 
 }
+
+.postContainer {
+  /*border: 1px solid blue;*/
+}
+
+
 .userName, .poochName {
   vertical-align: top;
 }
@@ -138,7 +144,12 @@ form {
 }
 
 
+.spanSmall {
+  width: 40%;
+  float: left;
+  height: 100px;
 
+}
 
 .span-2 {
   width: 50%;
@@ -152,6 +163,27 @@ form {
   float: left;
 
 }
+
+.commentsContainer {
+  margin: 10px;
+  margin-left: 50px;
+  background-color: #f4f4f4;
+  border: 1px solid #ef8c38;
+
+  margin: 30px auto;
+  width: 68%;
+}
+
+
+.newCommentContainer {
+  margin: 10px;
+  background-color: #f4f4f4;
+  border: 1px solid red;
+
+  margin: 30px auto;
+  width: 80%;
+}
+
 
 .searchResultsContainer {
   margin: 10px;
