@@ -5,9 +5,7 @@ def createPost()
 
   post.user_id = session[:user_id]
   post.primaryimageurl = params[:primaryimageurl]
-  post.secondaryimageurl = params[:secondaryimageurl]
   post.content = params[:content]
-  post.datetimeofpost = Time.now
   post.save
 
 end

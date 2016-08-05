@@ -1,4 +1,12 @@
 
+heroku logs --tail:
+
+
+# require 'sinatra/reloader'
+
+
+
+
 username / password
 ===========================================================================
 animallover2
