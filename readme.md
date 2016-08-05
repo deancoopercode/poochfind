@@ -36,3 +36,5 @@ https://trello.com/b/qGbU6lI0/yourpooch
 * Code
 
 https://github.com/deancoopercode/poochfind
+
+*  Wireframes are in a PDF in this directory
