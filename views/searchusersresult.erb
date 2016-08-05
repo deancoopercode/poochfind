@@ -1,5 +1,11 @@
-<h1> search results </h1>
+<h2>Search Results</h2>
 
+
+
+<% if @userSearchResults.count == 0 %>
+  <h3>No search results found </h3>
+
+<% end %>
 
 <% @userSearchResults.each do |user| %>
 

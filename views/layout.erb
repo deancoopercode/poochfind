@@ -5,6 +5,7 @@
   <title>Pooch Pals</title>
   <link rel='stylesheet' href='/stylesheets/main.css'>
   <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <header>
@@ -14,7 +15,7 @@
 
     <form action="/session" method="post">
       <input type="hidden" name="_method" value="delete">
-      <button>logout</button>
+      <button>Logout</button>
     </form>
   </div>
 
@@ -24,13 +25,13 @@
   <form action="/session" method="post">
     <table>
       <tr>
-        <td style="width: 20%"><label for="">email</label></td>
+        <td style="width: 20%"><label for="">Email</label></td>
         <td>
           <input type="text" name="email">
         </td>
       </tr>
       <tr>
-        <td><label for="">password</label></td>
+        <td><label for="">Password</label></td>
         <td><input type="password" name="password"></td>
 
         <td style="width: 80%">
@@ -44,7 +45,7 @@
   <% end %>
 
 <div id="headerDiv">
-  <img src="images\logo4.png"></img>
+  <img src="\images\logo4.png"></img>
 </div>
 
   <heading>
@@ -57,15 +58,9 @@
     </nav>
   </heading>
 
-<hr>
+
 </header>
   <%= yield %>
 
 <script src="javascripts/application.js"></script>
 </body>
-
-
-<!--
-<p><a href="/searchusers">Search</a>  </p>
-<p><a href="/post">Add Post</a></p>
-<p><a href="/friendlist">My Friends</a></p> -->

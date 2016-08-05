@@ -2,6 +2,22 @@
   box-sizing: border-box;
 }
 
+h2, h3, h4 {
+  font-family: 'Libre Baskerville', serif;
+  text-align: center;
+}
+
+#commentCountLabel {
+  margin: 15px;
+  text-align: left;
+}
+
+heading nav ul {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
 .tdHeaderRowCol1 {
   width: 30%;
 }
@@ -13,7 +29,8 @@
   border: solid 1px #cfd6dc;
   border-top-color: #fcfcfc;
   border-bottom-color: #b2bdc7;
-  padding: 0,2em;
+  padding: 0em, 2em;
+
 }
 
 .userName, .poochName {
@@ -64,6 +81,13 @@ body {
   width: 300px;
   height: 30px;
   margin: 5px;
+  font-size: 0.85em;
+}
+#newCommentText{
+  width: 80%;
+  height: 30px;
+  margin-left: 10px;
+  font-size: 0.85em;
 }
 
 #poochImg {
@@ -86,6 +110,7 @@ form {
 
 header {
   background-color: white;
+  border: 1px solid #65a086;
 }
 
 
@@ -119,8 +144,12 @@ header {
 
 #loggedinHeader {
   margin: 10px;
+  font-family: 'Libre Baskerville', serif;
 }
 
+label {
+  font-family: 'Libre Baskerville', serif;
+}
 .primaryImagePost {
   float: left;
   margin: 0px 15px 5px 5px;
@@ -130,7 +159,9 @@ header {
 
 .primaryVideoPost{
   float: left;
-  margin: 0px 5px 5px 5px;
+  margin: 0px 15px 5px 5px;
+  width:280px;
+  height: 158px;
 }
 
 .spanSmall {
@@ -159,7 +190,6 @@ header {
 }
 
 .commentsContainer {
-  /*margin: 10px;*/
   margin-left: 50px;
   background-color: #f4f4f4;
   border: 1px solid gray;
@@ -172,15 +202,9 @@ header {
 }
 
 .newCommentContainer {
-  margin: 0 auto;
-  width: 80%;
+  margin: 10px auto;
+  width: 95%;
   border-radius: 10px;
-}
-
-#newCommentText{
-  width: 80%;
-  height: 30px;
-  margin-left: 10px;
 }
 
 .postContainer {
@@ -188,6 +212,7 @@ header {
     margin: 20px auto;
     margin-bottom: 50px;
     width: 80%;
+    border: 1px solid black;
 }
 
 .searchResultsContainer {
@@ -214,13 +239,8 @@ header {
   display: inline-block;
 }
 
-heading nav ul {
-  padding: 0;
-  margin: 0;
-}
 
 heading nav li {
-  padding-right: 1em 0em 1em 0em;
   border: 1px solid black;
   list-style: none;
   text-align: center;
@@ -230,7 +250,7 @@ heading nav li {
   height: 30px;
   vertical-align: top;
   border-radius: 10px;
-  width: 23%;
+  width: 24.4%;
   display: inline-block;
 }
 nav li:nth-child(even) {
@@ -240,4 +260,16 @@ nav li:nth-child(even) {
 heading nav{
   width: 95%;
   margin: 0 auto;
+}
+
+footer {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 0.75em;
+  color : black;
+  text-shadow:
+    -1px -1px 0 #FFF,
+    1px -1px 0 #FFF,
+    -1px 1px 0 #FFF,
+    1px 1px 0 #FFF;
 }

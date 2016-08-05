@@ -1,6 +1,6 @@
-<form action="/post" method="post">
+<h2>Add Post</h2>
 
-  <h1>Add Post</h1>
+<form action="/post" onsubmit="return validateSubmitPostForm()"  method="post">
 
 <table>
   <tr>
@@ -16,7 +16,7 @@
       <label for="">Image URL or Youtube Video</label>
     </td>
   <td>
-    <input class="inputBox" type="text" name="primaryimageurl">
+    <input class="inputBox" type="text" id="primaryimageurl" name="primaryimageurl">
   </td>
 </tr>
 <tr>
