@@ -23,7 +23,7 @@ This is an sample website demonstrating interactions between peoples pet owners 
 * Some of the joins need to be re-written
 
 
-### Links to user stories and github repository.
+### Links to user stories and github repository. (and trello)
 
 https://trello.com/b/qGbU6lI0/yourpooch
 
