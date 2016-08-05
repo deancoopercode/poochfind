@@ -29,6 +29,10 @@ This is an sample website demonstrating interactions between peoples pet owners 
 
 https://poochfind.herokuapp.com
 
+* User Stories
+
 https://trello.com/b/qGbU6lI0/yourpooch
+
+* Code
 
 https://github.com/deancoopercode/poochfind
